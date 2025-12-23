@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/news_blog?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  jwt:
+    secret: "CHANGE_THIS_SECRET_TO_A_LONG_RANDOM_STRING_32+_CHARS_MINIMUM"
+    expiration-minutes: 120
+  cors:
+    allowed-origins: "http://localhost:4200"
