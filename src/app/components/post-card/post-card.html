@@ -1,0 +1,21 @@
+<div style="border:1px solid #ccc; padding:12px;">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.summary }}</p>
+
+  <small>
+    {{ post.categoryName }} |
+    {{ post.authorName }}
+  </small>
+
+  <div style="margin-top:8px;">
+    <button (click)="onEdit()">Editar</button>
+
+    <!-- 🔐 SOLO ADMIN -->
+    <button
+      *ngIf="auth.isAdmin()"
+      (click)="onDelete()"
+      style="color:red">
+      Eliminar
+    </button>
+  </div>
+</div>

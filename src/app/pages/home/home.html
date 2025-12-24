@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <span>📰 News Blog</span>
+  <span style="flex: 1"></span>
+  <button mat-raised-button (click)="goNew()">+ Nueva noticia</button>
+</mat-toolbar>
+
+<div style="padding: 16px;">
+  <mat-chip-listbox>
+    <mat-chip-option [selected]="selectedCategoryId === 0" (click)="selectCategory(0)">
+      Todas
+    </mat-chip-option>
+
+    <mat-chip-option
+      *ngFor="let c of categories"
+      [selected]="selectedCategoryId === c.id"
+      (click)="selectCategory(c.id)">
+      {{ c.name }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+
+  <div style="margin-top: 16px; display: grid; gap: 12px;">
+    <app-post-card
+      *ngFor="let p of posts"
+      [post]="p"
+      (edit)="onEdit($event)"
+      (deleted)="onDeleted()">
+    </app-post-card>
+  </div>
+</div>

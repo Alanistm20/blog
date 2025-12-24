@@ -1,0 +1,70 @@
+<div style="padding:16px; max-width: 900px; margin:auto;">
+  <h2>{{ id ? 'Editar noticia' : 'Nueva noticia' }}</h2>
+
+  <!-- TÍTULO -->
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Título</mat-label>
+    <input
+      matInput
+      [(ngModel)]="form.title"
+      name="title"
+      required
+    >
+  </mat-form-field>
+
+  <!-- RESUMEN -->
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Resumen</mat-label>
+    <input
+      matInput
+      [(ngModel)]="form.summary"
+      name="summary"
+      required
+    >
+  </mat-form-field>
+
+  <!-- CATEGORÍA -->
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Categoría</mat-label>
+    <mat-select
+      [(ngModel)]="form.categoryId"
+      name="categoryId"
+      required
+    >
+      <mat-option [value]="null">Seleccione...</mat-option>
+      <mat-option *ngFor="let c of categories" [value]="c.id">
+        {{ c.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- CONTENIDO -->
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Contenido</mat-label>
+    <textarea
+      matInput
+      rows="10"
+      [(ngModel)]="form.content"
+      name="content"
+      required
+    ></textarea>
+  </mat-form-field>
+
+  <!-- BOTONES -->
+  <div style="display:flex; gap:12px; margin-top:16px;">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="save()"
+    >
+      Guardar
+    </button>
+
+    <button
+      mat-stroked-button
+      (click)="cancel()"
+    >
+      Cancelar
+    </button>
+  </div>
+</div>

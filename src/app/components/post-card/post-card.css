@@ -1,0 +1,8 @@
+.card { border: 1px solid #ddd; border-radius: 12px; padding: 14px; background: #fff; }
+.badge { display:inline-block; padding:4px 10px; border-radius: 999px; font-size: 12px; border:1px solid #ddd; margin-bottom:8px; }
+.title { margin: 6px 0; }
+.meta { opacity: .7; font-size: 12px; margin: 0 0 8px; }
+.content { margin: 0 0 12px; }
+.actions { display:flex; gap:10px; }
+.btn { padding: 6px 10px; border: 1px solid #ccc; border-radius: 8px; text-decoration:none; background:#f7f7f7; cursor:pointer; }
+.danger { border-color:#ffb3b3; background:#ffe5e5; }
